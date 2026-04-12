@@ -2,6 +2,9 @@ require("dotenv").config()   // must be first line
 console.log("ENV CHECK:", process.env.GROQ_API_KEY ? "Present" : "Missing");
 
 const app = require("./src/app")
+
+app.set("trust proxy", 1) 
+
 const connectToDB = require("./src/config/database")
 
 connectToDB()
